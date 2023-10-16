@@ -1,6 +1,6 @@
 {  
   "title": "Phoenix AMTD Operator Demo",
-  "description": "Demonstration of install Falco automatically on a one node Kubernetes cluster",
+  "description": "Introduction of Phoenix AMTD Operator by going through three scenarios",
   "details": {
     "intro": {
       "text": "intro.md",
