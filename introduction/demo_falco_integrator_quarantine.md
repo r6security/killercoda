@@ -38,6 +38,8 @@ Try curl on google.com again (we should see no connection):
 
 `curl google.com`{{exec}}
 
+To interrupt the stucked curl command press `CTRL + C` in the terminal window.
+
 Let's exit from the pod and check the list of the pods:
 
 `exit`{{exec}}

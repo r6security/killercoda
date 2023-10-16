@@ -16,6 +16,7 @@ kubectl create configmap -n falco falco --from-file ./config-falco/falco.yaml
 kubectl create configmap -n falco falco-rules --from-file ./config-falco/falco-rules.yaml
 kubectl patch -n falco daemonsets.apps falco --patch-file ./config-falco/falco-patch.yaml
 kubectl delete pods -n falco -l app.kubernetes.io/name=falco
+kubectl -n falco wait --for=condition=ready pod --all
 kubectl -n falco get pods
 ```{{exec}}
 
