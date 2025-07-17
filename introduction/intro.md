@@ -2,24 +2,20 @@
 
 ### Welcome !
 
-In this demo, we'll demonstrate how effectively the AMTD operator can protect your applications running in Kubernetes by going through three scenarios.
+In this demo, we'll demonstrate how effectively the AMTD operator can protect your applications running in Kubernetes by going through two scenarios.
 
 The demo consists the following steps:
 
 # Setting up the infrastructure
 
-1. Deploy the Time-based Trigger
+1. Deploy the AMTD operator
 
-2. Deploy the Falco-integrator
-
-3. Deploy the AMTD operator
+2. Deploy the Time-based Trigger
 
 # Going through the security scenarios:
 
 1. Scheduled restart with Time-based Trigger
 
-2. On-demand restart with Falco-integrator
-
-3. On-Demand quarantine with Falco-integrator
+2. KubeArmor based on-demand application restart
 
 **HAVE FUN**

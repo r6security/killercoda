@@ -4,7 +4,7 @@ In this scenario we configure AMTD operator to delete the demo-page pod every ti
 # Deploy demo-page application:
 
 ```
-kubectl apply -n demo-page -f ./demo-time-based-trigger/demo-page-deployment.yaml
+kubectl apply -n demo-page -f deploy/manifests/demo-page/demo-page-deployment.yaml
 kubectl -n demo-page wait --for=condition=ready pod --all
 kubectl -n demo-page get pods -o wide
 ```{{exec}}
@@ -13,7 +13,7 @@ kubectl -n demo-page get pods -o wide
 
 1. Apply AMTD configuration:
 
-    `kubectl apply -n demo-page -f ./demo-time-based-trigger/time-based-trigger-demo-amtd.yaml`{{exec}}
+    `kubectl apply -n demo-page -f deploy/manifests/time-based-trigger-demo-amtd.yaml`{{exec}}
 
 2. Set the timer to 30s:
 
@@ -31,5 +31,8 @@ To exit from watch loop press `CTRL + C` in the terminal window.
 
 # Clean up this scenario:
 
-`kubectl delete ns demo-page`{{exec}}
+```
+kubectl -n time-based-trigger delete -f deploy/manifests/deploy-time-based-trigger
+kubectl delete ns demo-page
+```{{exec}}
 

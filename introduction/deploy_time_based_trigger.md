@@ -4,7 +4,7 @@ Time-based Trigger is a general in-house built backend to implement scheduled tr
 Deploy `Time-based Trigger`:
 
 ```
-kubectl apply -n time-based-trigger -f ./deploy-time-based-trigger
+kubectl apply -n time-based-trigger -f deploy/manifests/deploy-time-based-trigger
 kubectl -n time-based-trigger wait --for=condition=ready pod --all
 kubectl -n time-based-trigger get pods
 ```{{exec}}

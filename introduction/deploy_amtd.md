@@ -4,7 +4,7 @@ AMTD operator handles triggers from different backends, that are responsible for
 Deploy `AMTD Operator`:
 
 ```
-kubectl apply -n moving-target-defense -f ./deploy-amtd
+kubectl apply -n moving-target-defense -f deploy/manifests/deploy-phoenix
 kubectl -n moving-target-defense wait --for=condition=ready pod --all
 kubectl -n moving-target-defense get pods
 ```{{exec}}

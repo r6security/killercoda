@@ -1,57 +1,29 @@
 {  
   "title": "Phoenix AMTD Operator Demo",
-  "description": "Introduction of Phoenix AMTD Operator by going through three scenarios",
+  "description": "Introduction of Phoenix AMTD Operator by going through two scenarios",
   "details": {
     "intro": {
       "text": "intro.md",
-      "foreground": "check_falco_install.sh",
-      "background": "install_falco.sh"
+      "foreground": "setup.sh"
     },
     "steps": [
       {
-        "title": "List all Falco pods",
-        "text": "list_falco_pods.md"
+        "title": "Install Phoenix",
+        "text": "deploy_amtd.md"
       },
       {
         "title": "Deploy Time-based Trigger",
         "text": "deploy_time_based_trigger.md"
       },
       {
-        "title": "Deploy Falco-integrator",
-        "text": "deploy_falco_integrator.md"
-      },
-      {
-        "title": "Deploy AMTD operator",
-        "text": "deploy_amtd.md"
-      },
-      {
         "title": "Demo: Scheduled Restart with Time-based Trigger",
         "text": "demo_time_based_trigger.md"
       },
       {
-        "title": "Demo: On-Demand Restart with Falco-integrator",
-        "text": "demo_falco_integrator_delete.md"
-      },
-      {
-        "title": "Demo: On-Demand quarantine with Falco-integrator",
-        "text": "demo_falco_integrator_quarantine.md"
+        "title": "Demo: KubeArmor based on-demand application restart",
+        "text": "demo_kubearmor_application_restart.md"
       }
     ],
-    "assets": {
-      "host01": [
-        {"file": "deploy-time-based-trigger/deploy.yaml", "target": "/root/deploy-time-based-trigger", "chmod": "+w"},
-        {"file": "demo-time-based-trigger/demo-page-deployment.yaml", "target": "/root/demo-time-based-trigger", "chmod": "+w"},
-        {"file": "demo-time-based-trigger/time-based-trigger-demo-amtd.yaml", "target": "/root/demo-time-based-trigger", "chmod": "+w"},
-        {"file": "deploy-falco-integrator/deploy.yaml", "target": "/root/deploy-falco-integrator", "chmod": "+w"},
-        {"file": "demo-falco-integrator/demo-page-deployment.yaml", "target": "/root/demo-falco-integrator", "chmod": "+w"},
-        {"file": "demo-falco-integrator/falco-integrator-delete-demo-amtd.yaml", "target": "/root/demo-falco-integrator", "chmod": "+w"},
-        {"file": "demo-falco-integrator/falco-integrator-quarantine-demo-amtd.yaml", "target": "/root/demo-falco-integrator", "chmod": "+w"},
-        {"file": "deploy-amtd/deploy.yaml", "target": "/root/deploy-amtd", "chmod": "+w"},
-        {"file": "config-falco/falco-patch.yaml", "target": "/root/config-falco", "chmod": "+w"},
-        {"file": "config-falco/falco-rules.yaml", "target": "/root/config-falco", "chmod": "+w"},
-        {"file": "config-falco/falco.yaml", "target": "/root/config-falco", "chmod": "+w"}
-      ]
-    },
     "finish": {
       "text": "finish.md"
     }
