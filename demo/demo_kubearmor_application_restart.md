@@ -8,6 +8,8 @@ helm repo add kubearmor https://kubearmor.github.io/charts
 helm repo update kubearmor
 helm upgrade --install kubearmor-operator kubearmor/kubearmor-operator -n kubearmor --create-namespace
 kubectl apply -f https://raw.githubusercontent.com/kubearmor/KubeArmor/main/pkg/KubeArmorOperator/config/samples/sample-config.yml
+kubectl -n kubearmor wait --for=condition=ready pod --all
+kubectl -n kubearmor get pods -o wide
 ```{{exec}}
 
 # Deploy demo-page application:
@@ -44,7 +46,18 @@ EOF
 
 Deploy KubeArmor-integrator
 
-`kubectl -n kubearmor-integrator apply -f deploy/manifests/deploy-kubearmor-integrator`{{exec}}
+```
+kubectl -n kubearmor-integrator apply -f deploy/manifests/deploy-kubearmor-integrator
+kubectl -n kubearmor-integrator wait --for=condition=ready pod --all
+kubectl -n kubearmor-integrator get pods -o wide
+```{{exec}}
+
+Add kubearmor annotation to demo-page namespace
+
+```
+kubectl annotate namespace demo-page kubearmor-policy=enabled
+kubectl -n demo-page delete pod -l app=demo-page
+```{{exec}}
 
 # Configure Phoenix
 
